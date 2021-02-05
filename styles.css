@@ -18,6 +18,16 @@ html {
     background-color: #363a3f;
     height: 85%;
     width: 100%;
+    overflow: scroll;
+}
+
+#full::-webkit-scrollbar {
+    display: none;
+}
+  
+#full {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
 .messages {
@@ -78,6 +88,7 @@ li {
     height: auto;
     background-color: grey;
     color: white;
+    margin-top: 30px;
     margin-bottom: 20px;
     margin-left: 20px;
     list-style-type: none;
