@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat</title>
+    <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-database.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="full">
+        <div class="messages">
+            <ul id="messages">
+
+            </ul>
+        </div>
+    </div>
+
+    <form onsubmit="return sendMessage();">
+        <div class="bottom_container">
+            <div class="input_container">
+                <input id="message" placeholder="Enter Message" autocomplete="off">
+                <button type="submit" id="button" value="Send">Send</button>
+            </div>
+        </div>
+    </form>
+<script>
+
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyAAKNFD3SN2k2u08eP8R4tM2ctUP6RKTLg",
+    authDomain: "my-chat-app-7b0c0.firebaseapp.com",
+    projectId: "my-chat-app-7b0c0",
+    storageBucket: "my-chat-app-7b0c0.appspot.com",
+    messagingSenderId: "38794025507",
+    appId: "1:38794025507:web:9945d5243f0e1b80ba2f96"
+  };
+  firebase.initializeApp(firebaseConfig);
+
+  var myName = prompt("Enter Your Name");
+
+  function sendMessage() {
+
+    var message = document.getElementById("message").value;
+
+    firebase.database().ref("messages").push().set({
+        "sender": myName,
+        "message": message
+    });
+
+    return false;
+  }
+
+    firebase.database().ref("messages").on("child_added", function (snapshot) {
+        var html = "";
+        html += `<li>`;
+            html += snapshot.val().sender + ": " + snapshot.val().message;
+        html += `</li>`;
+
+        document.getElementById("messages").innerHTML += html;
+    });
+</script>
+</body>
+</html>
