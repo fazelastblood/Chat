@@ -6,21 +6,20 @@
     <title>Chat</title>
     <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-database.js"></script>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../styles/styles.css">
 </head>
 <body>
-    <div id="full">
-        <div class="messages">
-            <ul id="messages">
 
-            </ul>
-        </div>
+    <div id="full">
+        <ul id="messages">
+
+        </ul>
     </div>
 
     <form onsubmit="return sendMessage();">
         <div class="bottom_container">
             <div class="input_container">
-                <input id="message" placeholder="Enter Message" autocomplete="off">
+                <input id="message" placeholder="Enter Message #Memes" autocomplete="off">
                 <button type="submit" id="button" value="Send">Send</button>
             </div>
         </div>
@@ -37,8 +36,50 @@
     appId: "1:38794025507:web:9945d5243f0e1b80ba2f96"
   };
   firebase.initializeApp(firebaseConfig);
-
+  
   var myName = prompt("Enter Your Name");
+  
+  if (myName == " " || myName == " " || myName < 1) {
+    var myName = prompt("Enter Your Name");
+  } else {
+
+  }
+
+  if (myName == " " || myName == " " || myName < 1) {
+    var myName = prompt("Enter Your Name");
+  } else {
+      
+  }
+
+  if (myName == " " || myName == " " || myName < 1) {
+    var myName = prompt("Enter Your Name");
+  } else {
+      
+  }
+
+  if (myName == " " || myName == " " || myName < 1) {
+    var myName = prompt("Enter Your Name");
+  } else {
+      
+  }
+
+  if (myName == " " || myName == " " || myName < 1) {
+    var myName = prompt("Enter Your Name");
+  } else {
+      
+  }
+
+  if (myName == " " || myName == " " || myName < 1) {
+    var myName = prompt("Enter Your Name");
+  } else {
+      
+  }
+
+  if (myName == " " || myName == " " || myName < 1) {
+    var myName = prompt("Enter Your Name");
+  } else {
+      
+  }
 
   function sendMessage() {
 
